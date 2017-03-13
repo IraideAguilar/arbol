@@ -4,11 +4,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionListener;
@@ -43,26 +40,48 @@ public class Main extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Insertar arbol");
+		JButton btnNewButton = new JButton("Abrir Formulario");
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Ventana2_Main hijo = Ventana2_Main(this,true);
-				hijo.setVisible(true);
-				abrirFormularioArbol()
+			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(147, 179, 148, 23);
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnNewButton.setBounds(102, 201, 235, 23);
+		contentPane.add(btnNewButton);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(200, 82, 114, 20);
-		contentPane.setLayout(null);
-		contentPane.add(btnNewButton);
+		comboBox.setBounds(143, 96, 142, 20);
 		contentPane.add(comboBox);
 		
-		JLabel lblListaDeArboles = new JLabel("Lista de arboles:");
-		lblListaDeArboles.setFont(new Font("Traditional Arabic", Font.BOLD, 14));
-		lblListaDeArboles.setBounds(91, 85, 99, 17);
-		contentPane.add(lblListaDeArboles);
+		JLabel lblNewLabel = new JLabel("Lista de arboles :");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel.setBounds(10, 97, 123, 14);
+		contentPane.add(lblNewLabel);
+		
+		JLabel label = new JLabel("");
+		label.setBounds(102, 205, 46, 14);
+		contentPane.add(label);
+		
+		JButton btnNewButton_1 = new JButton("Insertar Arbol");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				abrirFormularioArbol();
+			}
+
+			private Datos Ventana2_Main(ActionListener actionListener, boolean b) {
+				// TODO Apéndice de método generado automáticamente
+				return null;
+			}
+		});
+		btnNewButton_1.setBounds(116, 163, 169, 23);
+		contentPane.add(btnNewButton_1);
+	}
+
+	protected void abrirFormularioArbol() {
+		// TODO Apéndice de método generado automáticamente
+		Datos hija = new Datos(this,"Formulario",true);
+		hija.setVisible(true);
 	}
 }

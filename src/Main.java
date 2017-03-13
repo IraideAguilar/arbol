@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 public class Main extends JFrame {
 
 	private JPanel contentPane;
+	private JComboBox comboBox;
 
 	/**
 	 * Launch the application.
@@ -51,7 +52,7 @@ public class Main extends JFrame {
 		btnNewButton.setBounds(102, 201, 235, 23);
 		contentPane.add(btnNewButton);
 		
-		JComboBox comboBox = new JComboBox();
+		comboBox = new JComboBox();
 		comboBox.setBounds(143, 96, 142, 20);
 		contentPane.add(comboBox);
 		
@@ -83,5 +84,10 @@ public class Main extends JFrame {
 		// TODO Apéndice de método generado automáticamente
 		Datos hija = new Datos(this,"Formulario",true);
 		hija.setVisible(true);
+	}
+	
+	public void aniadir(Arbol arbol){
+		//this.lista.addItem(arbol.nombre + " " + arbol.zona + " " + arbol.altura);
+		this.comboBox.addItem(arbol.getNombre() + " " + arbol.getZona() + " " + arbol.getAltura());
 	}
 }
